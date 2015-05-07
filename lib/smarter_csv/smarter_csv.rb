@@ -18,7 +18,7 @@ module SmarterCSV
     old_row_sep = $/
     line_count = 0
     begin
-      f = input.respond_to?(:readline) ? input : File.open(input, "r:#{options[:file_encoding]}")
+      f = input.respond_to?(:readline) ? input : File.open(input, "rb:#{options[:file_encoding]}")
 
       if options[:row_sep] == :auto
         options[:row_sep] =  SmarterCSV.guess_line_ending( f, options )
